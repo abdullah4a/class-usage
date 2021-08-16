@@ -7,11 +7,6 @@
 <script lang="ts">
 import { mixins } from "vue-class-component";
 import { Component, Prop, Vue } from "vue-property-decorator";
-const GreetingProps = Vue.extend({
-  props: {
-    name: String,
-  },
-});
 
 // Use `mixins` helper to combine defined props and a mixin.
 // @Component
@@ -24,6 +19,13 @@ const GreetingProps = Vue.extend({
 // }
 
 // Both Works Fine
+
+const GreetingProps = Vue.extend({
+  props: {
+    name: String,
+  },
+});
+
 @Component
 export default class Greeting extends mixins(GreetingProps) {
   get message(): string {
