@@ -19,12 +19,14 @@ const GreetingProps = Vue.extend({
 export default class Greeting extends mixins(GreetingProps) {
   get message(): string {
     this.name = this.hello();
-    // this.name will be typed
     return "Hello, " + this.name;
   }
 
   hello(): string {
-    return "Bilal";
+    let nameinstring = prompt("Enter Name : ");
+    if (!nameinstring) {
+      return "";
+    } else return nameinstring.toString();
   }
 }
 </script>
